@@ -107,7 +107,7 @@ function api:logs($timestamp as xs:string*) as map(*)
         map {
             "timestamp": fn:current-dateTime(),
             "running": map:merge(
-                for $language in ('arabic', 'chinese', 'english', 'english-kbp', 'french', 'german', 'spanish')
+                for $language in ('arabic', 'chinese', 'english', 'english-kbp', 'french', 'german', 'hungarian', 'italian', 'spanish')
                 let $running := $allLogs[@language = $language]
                 let $start := fn:max($running[. = "start"]/@timestamp/string())
                 let $end := fn:max($running[. = "end"]/@timestamp/string())
