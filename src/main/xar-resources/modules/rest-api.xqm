@@ -65,6 +65,12 @@ $language as xs:string*
     case "german"
         return api:schedule-language($language)
 
+    case "hungarian"
+        return api:schedule-language($language)
+
+    case "italian"
+        return api:schedule-language($language)
+
     case "spanish"
         return api:schedule-language($language)
 
@@ -72,7 +78,7 @@ $language as xs:string*
         return
             map {
                 "status": fn:false(),
-                "languages": array {('arabic', 'chinese', 'english', 'english-kbp', 'french', 'german', 'spanish')}
+                "languages": array {('arabic', 'chinese', 'english', 'english-kbp', 'french', 'german', 'hungarian', 'italian', 'spanish')}
             }
 };
 
