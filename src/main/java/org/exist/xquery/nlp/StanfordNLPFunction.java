@@ -80,9 +80,10 @@ public class StanfordNLPFunction extends BasicFunction {
         properties = new Properties();
         if (getArgumentCount() == 2 && !args[1].isEmpty()) {
             AbstractMapType entries = (AbstractMapType) args[1].itemAt(0);
-            Iterator<IEntry<AtomicValue, Sequence>> iterator = entries.iterator();
-            while (iterator.hasNext()) {
-                IEntry<AtomicValue, Sequence> entry = iterator.next();
+            Iterator<IEntry<AtomicValue, Sequence>> entryIterator;
+            entryIterator = entries.iterator();
+            while (entryIterator.hasNext()) {
+                final IEntry<AtomicValue, Sequence> entry = entryIterator.next();
                 String key = String.valueOf(entry.key());
                 final Sequence entryValue = entry.value();
                 final Item item = entryValue.itemAt(0);

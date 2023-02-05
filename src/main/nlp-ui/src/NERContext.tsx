@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import React, {useEffect, useState} from "react";
 import './App.css';
 import {Button, Col, Form, Row} from "react-bootstrap";
-import ReactJson from 'react-json-view';
 
 function NERContext() {
 
@@ -22,7 +21,7 @@ function NERContext() {
     const [nerError, setNerError] = useState({ code: null, description: null, value: null, properties: {}});
 
     useEffect(() => {
-        let uri = '/exist/restxq/stanford/nlp/logs';
+        const uri = '/exist/restxq/stanford/nlp/logs';
 
         fetch(uri)
             .then((response) => response.json())
@@ -31,14 +30,13 @@ function NERContext() {
                     setRunning(result.running);
                 },
                 (error) => {
-
+                    console.log(error);
                 }
             )
 
     }, [])
 
-    // @ts-ignore
-    function handleChange(e) {
+    function handleChange(e: React.ChangeEvent<HTMLSelectElement> | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         if (e.target.name === 'language') {
             setLanguage(e.target.value);
         } else {
@@ -67,7 +65,7 @@ function NERContext() {
                     }
                 },
                 (error) => {
-
+                    console.log(error);
                 }
             )
 
@@ -111,7 +109,6 @@ function NERContext() {
                             <div><b>Code</b> <span>{nerError.code}</span></div>
                             <div><b>Description</b> <span>{nerError.description}</span></div>
                             <div><b>Value</b> <span>{nerError.value}</span></div>
-                            <ReactJson src={nerError.properties} />
                         </>
                         : null
                 }</div>

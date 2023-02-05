@@ -1,10 +1,7 @@
-import React from "react";
-import {HouseDoorFill} from 'react-bootstrap-icons';
 
 export const SideBarData = [
     {
         label: "Home",
-        icon: <HouseDoorFill />,
         key: "/"
     },
     {
@@ -13,7 +10,6 @@ export const SideBarData = [
     },
     {
         label: "Setup",
-        icon: <HouseDoorFill />,
         key: "/setup"
     }
 ]

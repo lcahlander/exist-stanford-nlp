@@ -14,7 +14,7 @@
 
   <groupId>org.exist-db</groupId>
   <artifactId>stanford-nlp</artifactId>
-  <version>0.9.1</version>
+  <version>4.5.2</version>
 
   <name>Stanford Natural Language Processing</name>
   <description>Integrates the Stanford CoreNLP annotation pipeline library into eXist-db.</description>
@@ -63,10 +63,9 @@
     <project.build.source>1.8</project.build.source>
     <project.build.target>1.8</project.build.target>
 
-    <exist.version>6.0.1</exist.version>
-    <node.version>v17.2.0</node.version>
-    <npm.version>8.1.4</npm.version>
-    <corenlp.version>4.5.1</corenlp.version>
+    <exist.version>6.2.0</exist.version>
+    <node.version>v18.11.0</node.version>
+    <npm.version>8.19.2</npm.version>
     <!-- See polymer-cli documentation -->
     <browser.support>es5-bundled</browser.support>
 
@@ -75,7 +74,7 @@
 
     <example.module.namespace>http://exist-db.org/xquery/stanford-nlp</example.module.namespace>
     <example.module.java.classname>StanfordNLPModule</example.module.java.classname>
-    <jodatime.version>2.11.2</jodatime.version>
+    <jodatime.version>2.12.0</jodatime.version>
     <javamatrix.version>0.25</javamatrix.version>
     <protobuf.version>3.21.12</protobuf.version>
   </properties>
@@ -89,37 +88,25 @@
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
+      <version>${project.version}</version>
       <classifier>javadoc</classifier>
     </dependency>
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
+      <version>${project.version}</version>
       <classifier>sources</classifier>
     </dependency>
     <dependency>
       <groupId>edu.stanford.nlp</groupId>
       <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
+      <version>${project.version}</version>
       <classifier>models</classifier>
-    </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
-      <classifier>models-english</classifier>
-    </dependency>
-    <dependency>
-      <groupId>edu.stanford.nlp</groupId>
-      <artifactId>stanford-corenlp</artifactId>
-      <version>${corenlp.version}</version>
-      <classifier>models-english-kbp</classifier>
     </dependency>
 
     <!-- test dependencies -->
@@ -157,7 +144,6 @@
       <artifactId>protobuf-java</artifactId>
       <version>${protobuf.version}</version>
     </dependency>
-
   </dependencies>
 
   <reporting>
@@ -206,7 +192,7 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>src/main/js/frontend/build</directory>
+              <directory>src/main/nlp-ui/build</directory>
             </fileset>
           </filesets>
         </configuration>
@@ -229,11 +215,11 @@
                 https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
         <version>1.12.1</version>
         <configuration>
-          <nodeVersion>v15.7.0</nodeVersion>
-          <npmVersion>7.4.3</npmVersion>
+          <nodeVersion>v18.6.0</nodeVersion>
+          <npmVersion>8.13.2</npmVersion>
           <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
           <npmDownloadRoot>http://registry.npmjs.org/npm/-/</npmDownloadRoot>
-          <workingDirectory>src/main/js/frontend</workingDirectory>
+          <workingDirectory>src/main/nlp-ui</workingDirectory>
         </configuration>
         <executions>
           <execution>
@@ -297,7 +283,7 @@
             </goals>
             <configuration>
               <descriptor>xar-assembly.xml</descriptor>
-              <finalName>${package-final-name}</finalName>
+              <finalName>${package-final-name}-${build-commit-abbrev}</finalName>
             </configuration>
           </execution>
         </executions>

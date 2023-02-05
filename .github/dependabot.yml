@@ -1,7 +1,7 @@
 version: 2
 updates:
   - package-ecosystem: 'npm'
-    directory: '/src/main/js/frontend/'
+    directory: '/src/main/nlp-ui/'
     schedule:
       interval: 'daily'
   - package-ecosystem: 'maven'

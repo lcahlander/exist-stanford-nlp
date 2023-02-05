@@ -35,8 +35,7 @@ declare variable $config:expath-descriptor := doc(concat($config:app-root, "/exp
 
 declare variable $config:data-root := concat($config:app-root, "/data");
 
-(: TODO(DP): use maven templating to construct version here :)
-declare variable $config:corenlp-version := '4.4.0';
+declare variable $config:corenlp-version := fn:substring-before($config:expath-descriptor/@version/fn:string(), "-");
 declare variable $config:corenlp-model-url := 'http://nlp.stanford.edu/software/stanford-corenlp-' || $config:corenlp-version ||'-models-';
 
 (:~

@@ -48,13 +48,13 @@ function SetupContent() {
                     setLast(result.timestamp);
                 },
                 (error) => {
-
+                    console.log(error);
                 }
             )
     }
 
     function loadLanguage(theLanguage: string) {
-        let aRunning = running;
+        const aRunning = running;
         // @ts-ignore
         aRunning[theLanguage].isRunning = true;
         // @ts-ignore
@@ -66,9 +66,10 @@ function SetupContent() {
             .then((response) => response.json())
             .then(
                 (result) => {
+                    console.log(result);
                 },
                 (error) => {
-
+                    console.log(error);
                 }
             )
     }

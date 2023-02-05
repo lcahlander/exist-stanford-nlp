@@ -89,3 +89,4 @@ nb-configuration.xml
 node/
 node_modules/
 
+/src/main/nlp-ui/package-lock.json

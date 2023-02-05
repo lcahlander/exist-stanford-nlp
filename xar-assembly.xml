@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package xmlns="http://expath.org/ns/pkg" name="${package-name}" abbrev="${package-abbrev}" version="${project.version}"
-    spec="1.0">
+<package xmlns="http://expath.org/ns/pkg"
+         name="${package-name}"
+         abbrev="${package-abbrev}"
+         version="${project.version}-${build-commit-abbrev}"
+         spec="1.0">
     <title>${package-title}</title>
     <author id="my-organisation">eXist-db</author>
     <website>${project.url}</website>
@@ -39,7 +42,7 @@
             <directory>${basedir}/src/main/xar-resources</directory>
         </fileSet>
         <fileSet>
-            <directory>${basedir}/src/main/js/frontend/build</directory>
+            <directory>${basedir}/src/main/nlp-ui/build</directory>
         </fileSet>
     </fileSets>
 
@@ -73,12 +76,12 @@
         <dependencySet>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>${corenlp.version}</version>
+            <version>${project.version}</version>
         </dependencySet>
         <dependencySet>
             <groupId>edu.stanford.nlp</groupId>
             <artifactId>stanford-corenlp</artifactId>
-            <version>${corenlp.version}</version>
+            <version>${project.version}</version>
             <classifier>models</classifier>
         </dependencySet>
         <dependencySet>
