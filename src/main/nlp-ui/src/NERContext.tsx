@@ -12,6 +12,8 @@ function NERContext() {
         "chinese": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "french": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "german": { "start": null, "end": null, "isRunning": false, isLoaded: false },
+        "hungarian": { "start": null, "end": null, "isRunning": false, isLoaded: false },
+        "italian": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "spanish": { "start": null, "end": null, "isRunning": false, isLoaded: false }
     })
 
@@ -84,6 +86,8 @@ function NERContext() {
                                 <option value="zh" disabled={!running.chinese.isLoaded}>Chinese</option>
                                 <option value="fr" disabled={!running.french.isLoaded}>French</option>
                                 <option value="de" disabled={!running.german.isLoaded}>German</option>
+                                <option value="hu" disabled={!running.hungarian.isLoaded}>Hungarian</option>
+                                <option value="it" disabled={!running.italian.isLoaded}>Italian</option>
                                 <option value="es" disabled={!running.spanish.isLoaded}>Spanish</option>
                             </Form.Select>
                         </Form.Group>

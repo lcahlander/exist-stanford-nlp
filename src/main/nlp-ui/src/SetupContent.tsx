@@ -17,6 +17,8 @@ function SetupContent() {
         "chinese": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "french": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "german": { "start": null, "end": null, "isRunning": false, isLoaded: false },
+        "hungarian": { "start": null, "end": null, "isRunning": false, isLoaded: false },
+        "italian": { "start": null, "end": null, "isRunning": false, isLoaded: false },
         "spanish": { "start": null, "end": null, "isRunning": false, isLoaded: false }
     })
     const [last, setLast] = useState(null);
@@ -128,6 +130,22 @@ function SetupContent() {
                         :null
             }
                 German</Button>
+            <Button onClick={() => loadLanguage('hungarian')} disabled={running.hungarian.isRunning}>{
+                running.hungarian.isRunning ?
+                    <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>
+                    : running.hungarian.isLoaded ?
+                        <Check/>
+                        :null
+            }
+                Hungarian</Button>
+            <Button onClick={() => loadLanguage('italian')} disabled={running.italian.isRunning}>{
+                running.italian.isRunning ?
+                    <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>
+                    : running.italian.isLoaded ?
+                        <Check/>
+                        :null
+            }
+                Italian</Button>
             <Button onClick={() => loadLanguage('spanish')} disabled={running.spanish.isRunning}>{
                 running.spanish.isRunning ?
                     <Spinner as="span" animation="grow" size="sm" role="status" aria-hidden="true"/>
