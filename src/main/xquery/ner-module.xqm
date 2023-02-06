@@ -91,6 +91,8 @@ function ner:classify-node($node as node(), $language as xs:string) as node() {
  :  ar => /db/apps/stanford-nlp/data/StanfordCoreNLP-arabic.json &lt;br&gt;
  :  es => /db/apps/stanford-nlp/data/StanfordCoreNLP-spanish.json &lt;br&gt;
  :  fr => /db/apps/stanford-nlp/data/StanfordCoreNLP-french.json &lt;br&gt;
+ :  it => /db/apps/stanford-nlp/data/StanfordCoreNLP-italian.json &lt;br&gt;
+ :  hu => /db/apps/stanford-nlp/data/StanfordCoreNLP-hungarian.json &lt;br&gt;
  :  zh => /db/apps/stanford-nlp/data/StanfordCoreNLP-chinese.json &lt;br&gt;
  :  de => /db/apps/stanford-nlp/data/StanfordCoreNLP-german.json &lt;br&gt;
  : Any other value loads the english defaults.
@@ -103,6 +105,8 @@ function ner:properties-from-language($language as xs:string) as map(*) {
         case "ar" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-arabic.json")
         case "es" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-spanish.json")
         case "fr" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-french.json")
+        case "it" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-italian.json")
+        case "hu" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-hungarian.json")
         case "zh" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-chinese.json")
         case "de" return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-german.json")
         default return fn:json-doc("/db/apps/stanford-nlp/data/StanfordCoreNLP-english.json")

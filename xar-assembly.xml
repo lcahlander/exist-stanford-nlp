@@ -87,12 +87,12 @@
         <dependencySet>
             <groupId>de.jollyday</groupId>
             <artifactId>jollyday</artifactId>
-            <version>0.4.9</version>
+            <version>${jollyday.version}</version>
         </dependencySet>
         <dependencySet>
-            <groupId>com.io7m.xom</groupId>
+            <groupId>xom</groupId>
             <artifactId>xom</artifactId>
-            <version>1.2.10</version>
+            <version>${xom.version}</version>
         </dependencySet>
         <dependencySet>
             <groupId>joda-time</groupId>
