@@ -36,7 +36,7 @@ declare variable $config:expath-descriptor := doc(concat($config:app-root, "/exp
 declare variable $config:data-root := concat($config:app-root, "/data");
 
 declare variable $config:corenlp-version := fn:substring-before($config:expath-descriptor/@version/fn:string(), "-");
-declare variable $config:corenlp-model-url := 'http://nlp.stanford.edu/software/stanford-corenlp-' || $config:corenlp-version ||'-models-';
+declare variable $config:corenlp-model-url := 'https://nlp.stanford.edu/software/stanford-corenlp-' || $config:corenlp-version ||'-models-';
 
 (:~
  : Resolve the given path using the current application context.
